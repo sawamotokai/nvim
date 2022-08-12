@@ -95,6 +95,7 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["p"] = { "<cmd>Format<cr>", "Format" },
+  ["r"] = { "<cmd>TermExec cmd=\"cprun %:t:r\"<cr>", "CPRUN" },
 
   d = {
     name = "Debug",
