@@ -34,12 +34,17 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
 -- Yank
-keymap("n", "<C-y>", "gg\"+yG", opts)
+keymap("n", "<C-y>", 'gg"+yG', opts)
+
+-- open link
+keymap("n", "gx", ":execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press jj fast to enter
 keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
