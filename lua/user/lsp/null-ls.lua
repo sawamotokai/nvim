@@ -8,6 +8,8 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+vim.cmd('map <Leader>lF :lua vim.lsp.buf.range_formatting()<CR>')
+
 null_ls.setup({
   debug = false,
   sources = {
@@ -15,6 +17,10 @@ null_ls.setup({
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua,
     formatting.clang_format,
+    null_ls.builtins.code_actions.eslint_d,
+    --[[ null_ls.builtins.code_actions.refactoring, ]]
+    null_ls.builtins.completion.spell,
+    null_ls.builtins.hover.dictionary
     -- diagnostics.flake8
   },
 })

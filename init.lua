@@ -21,4 +21,5 @@ require("user.whichkey")
 require("user.autocommands")
 require("user.dap")
 require("user.glow")
-require("user.shade")
+require("user.knap")
+--[[ require("user.shade") ]]
