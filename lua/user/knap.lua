@@ -28,4 +28,8 @@ vim.g.knap_settings = {
     mdtohtml = "A=%outputfile% ; B=\"${A%.html}-preview.html\" ; pandoc --standalone %docroot% -o \"$A\" && sed 's/<\\/head>/<meta http-equiv=\"refresh\" content=\"1\" ><\\/head>/' \"$A\" > \"$B\" ",
     mdtohtmlviewerlaunch = "A=%outputfile% ; firefox \"${A%.html}-preview.html\"",
     mdtohtmlviewerrefresh = "none", 
+    texoutputext = "pdf",
+    textopdf = "pdflatex -synctex=1 -halt-on-error -interaction=batchmode %docroot%",
+    textopdfviewerlaunch = "mupdf %outputfile%",
+    textopdfviewerrefresh = "kill -HUP %pid%"
 }

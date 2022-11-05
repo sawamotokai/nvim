@@ -52,10 +52,11 @@ return packer.startup(function(use)
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
-	use("akinsho/bufferline.nvim")
+	--[[ use("akinsho/bufferline.nvim") ]]
+	use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
-	use("windwp/windline.nvim")
+	--[[ use("windwp/windline.nvim") ]]
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -143,6 +144,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("xiyaowong/telescope-emoji.nvim")
+	use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	-- Treesitter
 	use({

@@ -51,6 +51,18 @@ require("nvim-dap-virtual-text").setup({
 --   },
 -- }
 --
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command = '/home/kai/.local/share/codelldb/extension/adapter/codelldb',
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    -- detached = false,
+  }
+}
 dap.adapters.cpp = {
     type = 'executable',
     command = 'lldb-vscode',
@@ -59,19 +71,33 @@ dap.adapters.cpp = {
     },
     name = "lldb"
   }
-  dap.configurations.cpp = {
-    {
-      name = "Launch",
-      type = "cpp",
-      request = "launch",
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-      end,
-      cwd = '${workspaceFolder}',
-      runInTerminal = true,
-      args = {'<', '${workspaceFolder}/input.txt'},
-    }
-  }
+  --[[ dap.configurations.cpp = { ]]
+  --[[   { ]]
+  --[[     name = "Launch", ]]
+  --[[     type = "cpp", ]]
+  --[[     request = "launch", ]]
+  --[[     program = function() ]]
+  --[[       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file') ]]
+  --[[     end, ]]
+  --[[     cwd = '${workspaceFolder}', ]]
+  --[[     runInTerminal = true, ]]
+  --[[     args = {'<', '${workspaceFolder}/input.txt'}, ]]
+  --[[     stdio = nil, ]]
+  --[[   } ]]
+  --[[ } ]]
+dap.configurations.cpp = {
+  {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = true,
+    --[[ stdio = nil, ]]
+  },
+}
 
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp

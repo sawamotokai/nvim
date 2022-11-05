@@ -337,6 +337,11 @@ _G.packer_plugins = {
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/telescope-emoji.nvim",
     url = "https://github.com/xiyaowong/telescope-emoji.nvim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/kai/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -366,11 +371,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kai/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["windline.nvim"] = {
-    loaded = true,
-    path = "/home/kai/.local/share/nvim/site/pack/packer/start/windline.nvim",
-    url = "https://github.com/windwp/windline.nvim"
   }
 }
 

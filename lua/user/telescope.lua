@@ -5,6 +5,8 @@ end
 
 telescope.load_extension('media_files')
 telescope.load_extension("emoji")
+telescope.load_extension("file_browser")
+
 
 local actions = require "telescope.actions"
 
