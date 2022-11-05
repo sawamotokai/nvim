@@ -95,6 +95,7 @@ local mappings = {
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["j"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Search in File" },
 	["p"] = { "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", "Format" },
 	["r"] = { '<cmd>TermExec cmd="cprun %:t:r"<cr>', "CPRUN" },
 	["R"] = {
