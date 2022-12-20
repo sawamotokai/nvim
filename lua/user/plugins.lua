@@ -52,8 +52,8 @@ return packer.startup(function(use)
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
-	--[[ use("akinsho/bufferline.nvim") ]]
-	use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+	use("akinsho/bufferline.nvim")
+	--[[ use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'} ]]
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	--[[ use("windwp/windline.nvim") ]]
@@ -71,6 +71,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("ellisonleao/glow.nvim")
 	use("sunjon/shade.nvim")
+    use 'famiu/bufdelete.nvim'
 	use({
 		"max397574/better-escape.nvim",
 		config = function()
@@ -163,6 +164,7 @@ return packer.startup(function(use)
 
 	-- Debugger
 	use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap-python")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")

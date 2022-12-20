@@ -1,4 +1,4 @@
--- :help options
+
 vim.opt.backup = false                          -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
@@ -27,12 +27,31 @@ vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = false                  -- set relative numbered lines
-vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+-- GUI settings
+vim.opt.guifont = { "Hack Nerd Font", ":h8" }
+vim.cmd [[let g:neovide_transparency = 0.7]]
+vim.cmd [[let g:neovide_cursor_vfx_mode = "sonicboom"]]
+vim.cmd [[let g:neovide_cursor_vfx_mode = "pixiedust"]]
+vim.cmd [[let g:neovide_hide_mouse_when_typing = v:false]]
+vim.cmd [[let g:neovide_cursor_vfx_particle_density = 30.0]]
+vim.cmd [[let g:neovide_cursor_vfx_opacity = 400.0]]
+vim.cmd [[let g:neovide_floating_blur_amount_x = 2.0]]
+vim.cmd [[let g:neovide_floating_blur_amount_y = 2.0]]
+vim.cmd [[
+" system clipboard
+nmap <c-c> "+y
+vmap <c-c> "+y
+nmap <c-v> "+p
+inoremap <c-v> <c-r>+
+cnoremap <c-v> <c-r>+
+" use <c-r> to insert original character without triggering things like auto-pairs
+inoremap <c-r> <c-v>
+]]
 
 vim.opt.shortmess:append "c"
 
